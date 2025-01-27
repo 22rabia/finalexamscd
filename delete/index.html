@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Method Selection</title>
+    <style>
+        /* Styles from previous example */
+        /* ... */
+
+        /* Hide the card number input by default */
+        #cardNumberInput {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Select Payment Method:</h2>
+
+    <form id="paymentForm">
+        <label for="creditCard">
+            <input type="radio" id="creditCard" name="paymentMethod" value="creditCard">
+            Credit Card
+        </label>
+
+        <label for="debitCard">
+            <input type="radio" id="debitCard" name="paymentMethod" value="debitCard">
+            Debit Card
+        </label>
+
+        <label for="paypal">
+            <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+            PayPal
+        </label>
+
+        <label for="upi">
+            <input type="radio" id="upi" name="paymentMethod" value="upi">
+            UPI (Unified Payments Interface)
+        </label>
+
+        <!-- Card number input field -->
+        <div id="cardNumberInput">
+            <label for="cardNumber">Enter Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber">
+        </div>
+
+        <input type="submit" value="Proceed to Pay">
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cardNumberInput = document.getElementById('cardNumberInput');
+
+            // Event listener for radio button changes
+            document.querySelectorAll('input[type="radio"]').forEach(function(radio) {
+                radio.addEventListener('change', function() {
+                    // Hide the card number input by default
+                    cardNumberInput.style.display = 'none';
+
+                    // Show the card number input only when Credit Card or Debit Card is selected
+                    if (this.value === 'creditCard' || this.value === 'debitCard') {
+                        cardNumberInput.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

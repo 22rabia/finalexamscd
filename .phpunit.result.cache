@@ -1,0 +1,1 @@
+{"version":1,"defects":{"AuthenticatorTest::testSignup":8,"AuthenticatorTest::testLogin":8,"ReviewManagerTest::testAddReview":8,"ReviewManagerTest::testGetReviews":8},"times":{"AuthenticatorTest::testSignup":0.013,"AuthenticatorTest::testLogin":0.001,"ReviewManagerTest::testAddReview":0.004,"ReviewManagerTest::testGetReviews":0}}
